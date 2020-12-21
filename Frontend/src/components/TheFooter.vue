@@ -22,13 +22,13 @@
             </v-card-text>
 
             <v-card-text class="white--text pt-0">
-                Recuerda visitarnos en nuestro repositorio haciendo<a href="https://github.com/andresvarq/semana-5-156">click aquí</a>
+                Recuerda visitarnos en nuestro repositorio haciendo <a href="https://github.com/andresvarq/semana-5-156">click aquí</a>
             </v-card-text>
 
             <v-divider></v-divider>
 
             <v-card-text class="white--text">
-                {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+                {{ new Date().getFullYear() }} — <strong>ComCo</strong>
             </v-card-text>
             </v-card>
     </v-footer>

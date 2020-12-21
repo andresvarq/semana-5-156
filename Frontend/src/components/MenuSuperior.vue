@@ -9,7 +9,9 @@
         fixed-tabs
         dark
         >
-            <v-tab>
+            <v-tab
+            :to="{name: 'Home'}"
+            >
                 Home
             </v-tab>
             <v-tab>
@@ -22,7 +24,12 @@
             align="center"
             justify="space-around"
             >
-                <v-btn color="primary">LogIn</v-btn>
+                <v-btn
+                color="primary"
+                :to="{name: 'Login'}"
+                >
+                    LogIn
+                </v-btn>
             </v-row>
         </v-tabs>
     </v-app-bar>

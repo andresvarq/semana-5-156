@@ -34,7 +34,7 @@ exports.update = async(req, res, next) => {
         if (pas != reg0.password) {
             req.body.password = await bcrypt.hash(req.body.password, 10);
         }
-        const reg = await models.Categoria.update({ rol: req.body.rol, nombre: req.body.nombre, tipo_documento: req.body.tipo_documento, num_documento: req.body.num_documento, direccion: req.body.direccion, telefono: req.body.telefono, email: req.body.email, password: req.body.password }, { where: { id: req.body.id } });
+        const reg = await models.Categoria.update({ nombre: req.body.nombre, descripcion: req.body.descripcion }, { where: { id: req.body.id } });
         res.status(200).json(reg);
     } catch (error) {
         res.status(500).send({
