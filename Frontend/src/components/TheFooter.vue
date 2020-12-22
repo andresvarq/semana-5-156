@@ -4,45 +4,30 @@
     padless
     >
         <v-card
+        class="flex"
         flat
         tile
-        background-color="primary"
+        color="secondary"
         >
-            <v-card-text>
-                <v-btn
-                v-for="icon in icons"
-                :key="icon"
-                class="mx-4 white--text"
-                icon
-                >
-                    <v-icon size="24px">
-                        {{ icon }}
-                    </v-icon>
-                </v-btn>
+            <v-card-text class="py-2 white--text text-center">
+                <strong class="subheading">Recuerda visitarnos en nuestro repositorio haciendo <a href="https://github.com/andresvarq/semana-5-156">click aquí</a></strong>
             </v-card-text>
 
-            <v-card-text class="white--text pt-0">
-                Recuerda visitarnos en nuestro repositorio haciendo <a href="https://github.com/andresvarq/semana-5-156">click aquí</a>
+            <v-card-text class="py-2 white--text text-center">
+                <strong>Contacto: 3228509371</strong>
             </v-card-text>
 
-            <v-divider></v-divider>
-
-            <v-card-text class="white--text">
-                {{ new Date().getFullYear() }} — <strong>ComCo</strong>
+            <v-card-text class="py-2 white--text text-center">
+                {{ new Date().getFullYear() }} — <strong>Comudos</strong>
             </v-card-text>
-            </v-card>
+        </v-card>
+
+
     </v-footer>
 </template>
 
 <script>
     export default {
-        data: () => ({
-            icons: [
-                'mdi-facebook',
-                'mdi-twitter',
-                'mdi-linkedin',
-                'mdi-instagram',
-            ],
-        }),
+        name: 'Footer'
     }
 </script>

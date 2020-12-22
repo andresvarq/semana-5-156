@@ -11,15 +11,26 @@ const routes = [
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
   },
   {
-    path: '/administracion',
-    name: 'Administracion',
+    path: '/categorias',
+    name: 'Categorias',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "administracion" */ '../views/Administracion.vue'),
-    // meta: {
-    //   requiresAuth: true,
-    // }
+    component: () => import(/* webpackChunkName: "categorias" */ '../views/Categorias.vue'),
+    meta: {
+      requiresAuth: true,
+    }
+  },
+  {
+    path: '/articulos',
+    name: 'Articulos',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "articulos" */ '../views/Articulos.vue'),
+    meta: {
+      requiresAuth: true,
+    }
   },
   {
     path: '/login',
@@ -28,6 +39,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
+  },
+  {
+    path: '/servicios',
+    name: 'Servicios',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "servicios" */ '../views/Servicios.vue')
   },
 ]
 
@@ -41,7 +60,7 @@ router.beforeEach((to, from, next) =>{
   if(to.matched.some(record => record.meta.requiresAuth)) {
     if(localStorage.getItem('jwt') === null) {
       next({
-        path: '/'
+        path: '/categorias'
       });
     } else {
       next();

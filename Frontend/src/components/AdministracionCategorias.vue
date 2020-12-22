@@ -12,7 +12,7 @@
                 <v-toolbar-title>Categorias</v-toolbar-title>
 
                 <v-divider
-                class="mx-4"
+                class="mx-4 mn-4"
                 inset
                 vertical
                 ></v-divider>
@@ -58,6 +58,14 @@
                                         auto-grow
                                         ></v-textarea>
                                     </v-col>
+                                    <v-col
+                                    cols="12"
+                                    >
+                                        <v-text-field
+                                        v-model="editedItem.imagen"
+                                        label="Link Imagen"
+                                        ></v-text-field>
+                                    </v-col>
                                 </v-row>
                             </v-container>
                         </v-card-text>
@@ -65,14 +73,14 @@
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn
-                            color="blue darken-1"
+                            color="primary"
                             text
                             @click="close"
                             >
                                 Cancelar
                             </v-btn>
                             <v-btn
-                            color="blue darken-1"
+                            color="primary"
                             text
                             @click="save"
                             >
@@ -86,8 +94,8 @@
                         <v-card-title class="headline">Seguro que querés cambiar el estado?</v-card-title>
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn color="blue darken-1" text @click="closeDelete">No</v-btn>
-                            <v-btn color="blue darken-1" text @click="deleteItemConfirm">Si</v-btn>
+                            <v-btn color="primary" text @click="closeDelete">No</v-btn>
+                            <v-btn color="primary" text @click="deleteItemConfirm">Si</v-btn>
                             <v-spacer></v-spacer>
                         </v-card-actions>
                     </v-card>
@@ -96,7 +104,7 @@
         </template>
         <template v-slot:item.actions="{ item }">
             <v-icon
-            small
+            medium
             class="mr-2"
             @click="editItem(item)"
             >
@@ -149,13 +157,15 @@
                 nombre: '',
                 descripcion: '',
                 estado: 1,
-                id: 0
+                id: 0,
+                imagen: ''
             },
             defaultItem: {
                 nombre: '',
                 descripcion: '',
                 estado: 1,
-                id: 0
+                id: 0,
+                imagen: ''
             },
         }),
         computed: {
@@ -238,6 +248,7 @@
                         "id": this.editedItem.id,
                         "nombre": this.editedItem.nombre,
                         "descripcion": this.editedItem.descripcion,
+                        "imagen": this.editItem.imagen,
                     })
                     .then(response => {
                         this.list();
@@ -250,6 +261,7 @@
                         "id": this.editedItem.id,
                         "nombre": this.editedItem.nombre,
                         "descripcion": this.editedItem.descripcion,
+                        "imagen": this.editItem.imagen,
                     })
                     .then(response => {
                         this.list();

@@ -1,20 +1,47 @@
 <template>
-    <div class="container mt-5">
-        <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Su correo</label>
-            <input v-model="login.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">Todo bien que esto es solo pa nosotros.</small>
-        </div>
-
-        <div class="form-group">
-            <label for="exampleInputPassword1">Contrajeña</label>
-            <input v-model="login.password" type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-
-        <button @click.prevent="loginUser" type="submit" class="btn btn-primary">Hacéle pués</button>
-    </form>
-    </div>
+    <v-row
+    justify="center"
+    >
+        <v-col
+        cols="12"
+        sm="10"
+        md="8"
+        lg="6"
+        >
+            <v-card
+            ref="form"
+            color="primary"
+            >
+                <v-card-text>
+                    <v-text-field
+                    ref="email"
+                    v-model="login.email"
+                    label="email"
+                    placeholder="email"
+                    required
+                    ></v-text-field>
+                    <v-text-field
+                    ref="password"
+                    v-model="login.password"
+                    label="password"
+                    placeholder="password"
+                    required
+                    type="password"
+                    ></v-text-field>
+                </v-card-text>
+                <v-divider class="mt-12"></v-divider>
+                <v-card-actions>
+                    <v-btn
+                    color="accent"
+                    text
+                    @click="loginUser"
+                    >
+                        Enviar
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-col>
+    </v-row>
 </template>
 
 <script>
@@ -43,7 +70,7 @@ export default {
                 localStorage.setItem('email', JSON.stringify(email));
                 if(token) {
                     swal("Bueeeeenaaaa", "Esa era", "success");
-                    this.$router.push('/administracion');
+                    this.$router.push('/categorias');
                 }
             }
             catch {

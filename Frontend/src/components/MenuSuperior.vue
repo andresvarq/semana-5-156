@@ -3,6 +3,7 @@
     app
     color="primary"
     dark
+    height="42"
     >
         <v-tabs
         app
@@ -14,7 +15,8 @@
             >
                 Home
             </v-tab>
-            <v-tab>
+            <v-tab
+            :to="{name: 'Servicios'}">
                 Servicios
             </v-tab>
             <v-tab>
@@ -38,13 +40,5 @@
 <script>
     export default {
         name: 'MenuSuperior',
-        data: () => ({
-            drawer: null,
-            admins: [
-                {}
-            ]
-        })
-
-    
     }
 </script>
