@@ -10,6 +10,11 @@
         dark
         >
             <v-tab
+            :to="{name: 'Home'}"
+            >
+                Home
+            </v-tab>
+            <v-tab
             :to="{name: 'Categorias'}"
             >
                 Categorias
@@ -18,9 +23,6 @@
             :to="{name: 'Articulos'}"
             >
                 Articulos
-            </v-tab>
-            <v-tab>
-                Referencias
             </v-tab>
             <v-row
             align="center"

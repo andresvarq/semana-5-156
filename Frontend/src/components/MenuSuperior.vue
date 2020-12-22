@@ -19,8 +19,9 @@
             :to="{name: 'Servicios'}">
                 Servicios
             </v-tab>
-            <v-tab>
-                Referencias
+            <v-tab
+            :to="{name: 'Categorias'}">
+                Controladores
             </v-tab>
             <v-row
             align="center"
